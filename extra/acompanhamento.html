@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Sistema de Pedidos</title>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
+
+    <link rel="stylesheet" href="app.css">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Sistema de Pedidos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">Cadastro</a>
+            <a class="nav-item nav-link" href="#">Acompanhamento</a>
+            <a class="nav-item nav-link" href="#">Caixa</a>
+            <a class="nav-item nav-link" href="#">Operação</a>
+        </div>
+    </div>
+</nav>
+<br/>
+
+<div class="container">
+    <div class="row">
+        <div class="jumbotron text-center col-12">
+            <h1>Acompanhamento dos Pedidos</h1>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Cliente</th>
+                <th class="text-center">Tempo em espera</th>
+                <th class="text-center">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Cliente</td>
+                <td class="text-center"> 10 min</td>
+                <td class="text-center"><i class="fas fa-circle fa-2x status-pagamento"></i></td>
+            </tr>
+            <tr>
+                <td>Cliente</td>
+                <td class="text-center"> 10 min</td>
+                <td class="text-center"><i class="fas fa-circle fa-2x status-conferencia"></i></td>
+            </tr>
+            <tr>
+                <td>Cliente</td>
+                <td class="text-center"> 10 min</td>
+                <td class="text-center"><i class="fas fa-circle fa-2x status-preparado"></i></td>
+            </tr>
+            <tr>
+                <td>Cliente</td>
+                <td class="text-center"> 10 min</td>
+                <td class="text-center"><i class="fas fa-circle fa-2x status-novo"></i></td>
+            </tr>
+            <tr>
+                <td>Cliente</td>
+                <td class="text-center"> 10 min</td>
+                <td class="text-center"><i class="fas fa-circle fa-2x status-novo"></i></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <h6>ATENÇÃO: Dirija-se ao caixa quando seu pedido estiver azul.</h6>
+    </div>
+    <br>
+    <div class="row">
+        <h4 class="col-12">Legenda</h4>
+        <br/>
+        <br/>
+        <table class="col-6">
+            <tr>
+                <td><i class="fas fa-circle fa-2x status-novo"></i></td>
+                <td>Pedido Novo</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-circle fa-2x status-preparado"></i></td>
+                <td>Pedido sendo Preparado</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-circle fa-2x status-conferencia"></i></td>
+                <td>Pedido em Conferência</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-circle fa-2x status-pagamento"></i></td>
+                <td>Pedido preparado para Pagamento</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!--JQuery-->
+<script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
+<!--Popper-->
+<script src="../node_modules/popper.js/dist/popper.min.js"></script>
+<!--Bootstrap-->
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

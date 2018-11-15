@@ -1,0 +1,15 @@
+.status-novo {
+    color: #f44336;
+}
+
+.status-preparado {
+    color: #FFEB3B;
+}
+
+.status-conferencia {
+    color: #4CAF50;
+}
+
+.status-pagamento {
+    color: #2196F3;
+}
