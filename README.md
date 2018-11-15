@@ -17,13 +17,13 @@ $ npm i && npm run start
 ## Telas do sistema
 
 ### Mobile
-![cadastro]:         (https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/01-mobile-cadastro.PNG)
-![acompanhamento]:   (https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/02-mobile-acompanhamento.PNG)
-![caixa]:            (https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/03-mobile-caixa.PNG)
-![operacao]:         (https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/04-mobile-operacao.PNG)
+![cadastro](https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/01-mobile-cadastro.PNG)
+![acompanhamento](https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/02-mobile-acompanhamento.PNG)
+![caixa](https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/03-mobile-caixa.PNG)
+![operacao](https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/04-mobile-operacao.PNG)
 
 ### Web
-![cadastro]:         (https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/01-web-cadastro.PNG)
-![acompanhamento]:   (https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/02-web-acompanhamento.PNG)
-![caixa]:            (https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/03-web-caixa.PNG)
-![operacao]:         (https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/04-web-operacao.PNG)
+![cadastro](https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/01-web-cadastro.PNG)
+![acompanhamento](https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/02-web-acompanhamento.PNG)
+![caixa](https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/03-web-caixa.PNG)
+![operacao](https://github.com/hickramos/monitoramento-pedidos-app/blob/master/extra/img/04-web-operacao.PNG)
