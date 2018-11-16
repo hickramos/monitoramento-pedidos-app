@@ -1,8 +1,12 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import { bindActionCreators } from 'redux';
+import {criarPedido} from '../actions/pedidoActions'
+import PedidoForm from './pedido/PedidoForm'
 
 class Cadastro extends Component {
-    render() {
-        return (
+    render(){
+        return(
             <div>
                 <div className="row">
                     <div className="jumbotron text-center col-12">
@@ -10,26 +14,15 @@ class Cadastro extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <form className="col-12">
-                        <div className="form-group">
-                            <h4>Nome</h4>
-                            <input type="text" className="form-control" placeholder="Nome"/>
-                        </div>
-                        <div className="form-group">
-                            <h4>CPF</h4>
-                            <input type="number" className="form-control" placeholder="CPF"/>
-                        </div>
-                        <div className="form-group">
-                            <h4>Descrição do Pedido</h4>
-                            <textarea type="text" className="form-control" placeholder="Descrição do Pedido"></textarea>
-                        </div>
-                        <span className="offset-8"></span>
-                        <button type="submit" className="btn btn-primary col-4">Registrar</button>
-                    </form>
+                    <PedidoForm onSubmit={this.props.criarPedido} />
                 </div>
             </div>
         )
     }
 }
 
-export default Cadastro
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({criarPedido}, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(Cadastro)
