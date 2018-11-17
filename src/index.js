@@ -7,8 +7,10 @@ import {BrowserRouter} from 'react-router-dom'
 
 import configureStore from './store/configureStore.js'
 import {Provider} from 'react-redux'
+import { selecionarPedidos } from './actions/pedidoActions';
 
 const store = configureStore()
+store.dispatch(selecionarPedidos())
 
 ReactDOM.render(
     <Provider store={store}>

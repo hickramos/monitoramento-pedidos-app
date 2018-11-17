@@ -2,62 +2,92 @@
   "pedidos": [
     {
       "id": 1,
-      "nomeCliente": "João Neto Barbosa",
+      "nome": "João Neto Barbosa",
       "cpf": "123.456.789.01",
       "descricao": "Um pedido com vários itens",
       "status": {
-        "id": 1
-      }
-    },
-    {
-      "id": 2,
-      "nomeCliente": "Maria da Silva José",
-      "cpf": "234.567.890.12",
-      "descricao": "Pedido genérico feito pela mariazinha",
-      "status": {
-        "id": 1
+        "id": "novo"
       }
     },
     {
       "id": 3,
-      "nomeCliente": "Zé pequeno",
+      "nome": "Zé pequeno",
       "cpf": "345.678.901.24",
       "descricao": "Uma pequena descrição de pedido",
       "status": {
-        "id": 1
+        "id": "preparado"
+      }
+    },
+    {
+      "id": 4,
+      "nome": "Zé pequeno",
+      "cpf": "345.678.901.24",
+      "descricao": "Uma pequena descrição de pedido",
+      "status": {
+        "id": "conferencia"
+      }
+    },
+    {
+      "id": 5,
+      "nome": "Zé pequeno",
+      "cpf": "345.678.901.24",
+      "descricao": "Uma pequena descrição de pedido",
+      "status": {
+        "id": "pronto"
+      }
+    },
+    {
+      "id": 6,
+      "nome": "Zé pequeno",
+      "cpf": "345.678.901.24",
+      "descricao": "Uma pequena descrição de pedido",
+      "status": {
+        "id": "excluido"
+      }
+    },
+    {
+      "id": 7,
+      "nome": "Zé pequeno",
+      "cpf": "345.678.901.24",
+      "descricao": "Uma pequena descrição de pedido",
+      "status": {
+        "id": "pagamento"
+      }
+    },
+    {
+      "nome": "Henrique",
+      "cpf": "123456",
+      "descricao": "teste",
+      "id": 11,
+      "status": {
+        "id": "novo"
       }
     }
   ],
   "status": [
     {
-      "id": 1,
-      "descricao": "NOVO",
-      "cor": "red"
+      "id": "novo",
+      "descricao": "NOVO"
     },
     {
-      "id": 2,
-      "descricao": "PREPARANDO",
-      "cor": "yellow"
+      "id": "preparado",
+      "descricao": "PREPARANDO"
     },
     {
-      "id": 3,
-      "descricao": "CONFERÊNCIA",
-      "cor": "green"
+      "id": "conferencia",
+      "descricao": "CONFERÊNCIA"
     },
     {
-      "id": 4,
-      "descricao": "PRONTO",
-      "cor": "blue"
+      "id": "pronto",
+      "descricao": "PRONTO"
     },
     {
-      "id": 5,
-      "descricao": "EXCLUIDO",
-      "cor": ""
+      "id": "excluido",
+      "descricao": "EXCLUÍDO"
     },
     {
-      "id": 6,
-      "descricao": "PAGO",
-      "cor": ""
+      "id": "pagamento",
+      "descricao": "PAGO"
     }
   ]
 }

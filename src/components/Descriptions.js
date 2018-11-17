@@ -8,22 +8,24 @@ class Descriptions extends Component {
                 <br/>
                 <br/>
                 <table className="col-6">
-                    <tr>
-                        <td><i className="fas fa-circle fa-2x status-novo"></i></td>
-                        <td>Pedido Novo</td>
-                    </tr>
-                    <tr>
-                        <td><i className="fas fa-circle fa-2x status-preparado"></i></td>
-                        <td>Pedido sendo Preparado</td>
-                    </tr>
-                    <tr>
-                        <td><i className="fas fa-circle fa-2x status-conferencia"></i></td>
-                        <td>Pedido em Conferência</td>
-                    </tr>
-                    <tr>
-                        <td><i className="fas fa-circle fa-2x status-pagamento"></i></td>
-                        <td>Pedido preparado para Pagamento</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td><i className="fas fa-circle fa-2x status-novo"></i></td>
+                            <td>Pedido Novo</td>
+                        </tr>
+                        <tr>
+                            <td><i className="fas fa-circle fa-2x status-preparado"></i></td>
+                            <td>Pedido sendo Preparado</td>
+                        </tr>
+                        <tr>
+                            <td><i className="fas fa-circle fa-2x status-conferencia"></i></td>
+                            <td>Pedido em Conferência</td>
+                        </tr>
+                        <tr>
+                            <td><i className="fas fa-circle fa-2x status-pagamento"></i></td>
+                            <td>Pedido preparado para Pagamento</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         )

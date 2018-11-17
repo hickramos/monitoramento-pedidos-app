@@ -1,4 +1,8 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {selecionarPedidos} from '../actions/pedidoActions'
+import { bindActionCreators } from 'redux';
+import AcompanhamentoList from './pedido/AcompanhamentoList';
 import Footer from "./Footer";
 
 class Acompanhamento extends Component {
@@ -11,42 +15,7 @@ class Acompanhamento extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <table className="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Cliente</th>
-                            <th className="text-center">Tempo em espera</th>
-                            <th className="text-center">Status</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"> 10 min</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-pagamento"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"> 10 min</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-conferencia"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"> 10 min</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-preparado"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"> 10 min</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-novo"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"> 10 min</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-novo"></i></td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <AcompanhamentoList pedidos={this.props.pedidos} />
                 </div>
                 <Footer/>
             </div>
@@ -54,4 +23,14 @@ class Acompanhamento extends Component {
     }
 }
 
-export default Acompanhamento
+function mapStateProps(state){
+    return {
+        pedidos: state.pedidos.list
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    bindActionCreators({selecionarPedidos}, dispatch);
+}
+
+export default connect(mapStateProps, mapDispatchToProps)(Acompanhamento)
