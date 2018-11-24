@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
-import Footer from "./Footer";
+import {connect} from 'react-redux'
+import {selecionarPedidos} from '../actions/pedidoActions'
+import { bindActionCreators } from 'redux';
+import  CaixaList  from './pedido/CaixaList';
 
 class Caixa extends Component {
     render() {
@@ -11,47 +14,21 @@ class Caixa extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <table className="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Cliente</th>
-                            <th className="text-center">Status</th>
-                            <th className="text-center">Finalizar</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-pagamento"></i></td>
-                            <td className="text-center"><i className="fas fa-forward fa-2x"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-pagamento"></i></td>
-                            <td className="text-center"><i className="fas fa-forward fa-2x"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-pagamento"></i></td>
-                            <td className="text-center"><i className="fas fa-forward fa-2x"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-pagamento"></i></td>
-                            <td className="text-center"><i className="fas fa-forward fa-2x"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-pagamento"></i></td>
-                            <td className="text-center"><i className="fas fa-forward fa-2x"></i></td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <CaixaList pedidos={this.props.pedidos} />
                 </div>
-                <Footer/>
             </div>
         )
     }
 }
 
-export default Caixa
+function mapStateProps(state){
+    return {
+        pedidos: state.pedidos.list
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    bindActionCreators({selecionarPedidos}, dispatch);
+}
+
+export default connect(mapStateProps, mapDispatchToProps)(Caixa)

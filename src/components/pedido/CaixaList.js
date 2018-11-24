@@ -1,25 +1,27 @@
 import React from 'react';
 
-const AcompanhamentoList = ({ pedidos }) => {
-    return (
+const CaixaList = ({pedidos}) => {
+    return(
         <table className="table table-striped">
             <thead>
-            <tr>
-                <th>Nome do Cliente</th>
-                <th className="text-center">Tempo em espera</th>
-                <th className="text-center">Status</th>
-            </tr>
+                <tr>
+                    <th>Nome do Cliente</th>
+                    <th className="text-center">Status</th>
+                    <th className="text-center">Finalizar</th>
+                </tr>
             </thead>
             <tbody>
                 {pedidos
-                    .filter(pedido => pedido.status.id !== 'excluido' && pedido.status.id !== 'pronto')
+                    .filter(pedido => pedido.status.id === 'pagamento')
                     .map(pedido => {
                         return(
                             <tr>
                                 <td>{pedido.nome}</td>
-                                <td className="text-center"> 10 min</td>
                                 <td className="text-center">
                                     <i className={"fas fa-circle fa-2x status-"+pedido.status.id}></i>
+                                </td>
+                                <td className="text-center">
+                                    <i className="fas fa-forward fa-2x"></i>
                                 </td>
                             </tr>
                         )
@@ -30,4 +32,4 @@ const AcompanhamentoList = ({ pedidos }) => {
     )
 }
 
-export default AcompanhamentoList;
+export default CaixaList;
