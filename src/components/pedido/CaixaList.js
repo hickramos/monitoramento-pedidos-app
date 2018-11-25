@@ -1,6 +1,10 @@
 import React from 'react';
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux';
+import {finalizarPedido} from '../../actions/pedidoActions'
 
-const CaixaList = ({pedidos}) => {
+const CaixaList = (props) => {
+    const {pedidos} = props;
     return(
         <table className="table table-striped">
             <thead>
@@ -11,25 +15,33 @@ const CaixaList = ({pedidos}) => {
                 </tr>
             </thead>
             <tbody>
-                {pedidos
-                    .filter(pedido => pedido.status.id === 'pagamento')
-                    .map(pedido => {
-                        return(
-                            <tr>
-                                <td>{pedido.nome}</td>
-                                <td className="text-center">
-                                    <i className={"fas fa-circle fa-2x status-"+pedido.status.id}></i>
-                                </td>
-                                <td className="text-center">
-                                    <i className="fas fa-forward fa-2x"></i>
-                                </td>
-                            </tr>
-                        )
-                    })
+                {pedidos.filter(pedido => pedido.status.id === 'pagamento').length > 0 ?
+                    pedidos
+                        .filter(pedido => pedido.status.id === 'pagamento')
+                        .map(pedido => {
+                            return(
+                                <tr key={pedido.id}>
+                                    <td>{pedido.nome}</td>
+                                    <td className="text-center">
+                                        <i className={"fas fa-circle fa-2x status-"+pedido.status.id}></i>
+                                    </td>
+                                    <td className="text-center">
+                                        <i className="fas fa-forward fa-2x" onClick={() => props.finalizarPedido(pedido)}></i>
+                                    </td>
+                                </tr>
+                            )
+                        }):
+                    <tr>
+                        <td colSpan="3">Nenhum pedido encontrado.</td>
+                    </tr>
                 }
             </tbody>
         </table>
     )
 }
 
-export default CaixaList;
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({finalizarPedido}, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(CaixaList);
