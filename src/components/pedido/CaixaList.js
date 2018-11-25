@@ -4,44 +4,45 @@ import {bindActionCreators} from 'redux';
 import {finalizarPedido} from '../../actions/pedidoActions'
 
 const CaixaList = (props) => {
-    const {pedidos} = props;
-    return(
+    const {pedidos} = props
+    return (
         <table className="table table-striped">
             <thead>
-                <tr>
-                    <th>Nome do Cliente</th>
-                    <th className="text-center">Status</th>
-                    <th className="text-center">Finalizar</th>
-                </tr>
+            <tr>
+                <th>Nome do Cliente</th>
+                <th className="text-center">Status</th>
+                <th className="text-center">Finalizar</th>
+            </tr>
             </thead>
             <tbody>
-                {pedidos.filter(pedido => pedido.status.id === 'pagamento').length > 0 ?
-                    pedidos
-                        .filter(pedido => pedido.status.id === 'pagamento')
-                        .map(pedido => {
-                            return(
-                                <tr key={pedido.id}>
-                                    <td>{pedido.nome}</td>
-                                    <td className="text-center">
-                                        <i className={"fas fa-circle fa-2x status-"+pedido.status.id}></i>
-                                    </td>
-                                    <td className="text-center">
-                                        <i className="fas fa-forward fa-2x" onClick={() => props.finalizarPedido(pedido)}></i>
-                                    </td>
-                                </tr>
-                            )
-                        }):
-                    <tr>
-                        <td colSpan="3">Nenhum pedido encontrado.</td>
-                    </tr>
-                }
+            {pedidos.filter(pedido => pedido.status.id === 'pagamento').length > 0 ?
+                pedidos
+                    .filter(pedido => pedido.status.id === 'pagamento')
+                    .map(pedido => {
+                        return (
+                            <tr key={pedido.id}>
+                                <td>{pedido.nome}</td>
+                                <td className="text-center">
+                                    <i className={"fas fa-circle fa-2x status-" + pedido.status.id}></i>
+                                </td>
+                                <td className="text-center">
+                                    <i className="fas fa-forward fa-2x"
+                                       onClick={() => props.finalizarPedido(pedido)}></i>
+                                </td>
+                            </tr>
+                        )
+                    }) :
+                <tr>
+                    <td colSpan="3">Nenhum pedido encontrado.</td>
+                </tr>
+            }
             </tbody>
         </table>
     )
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({finalizarPedido}, dispatch);
+    return bindActionCreators({finalizarPedido}, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(CaixaList);
+export default connect(null, mapDispatchToProps)(CaixaList)

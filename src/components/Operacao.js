@@ -1,5 +1,9 @@
 import React, {Component} from 'react'
 import Footer from "./Footer";
+import OperacaoList from "./pedido/OperacaoList"
+import {bindActionCreators} from "redux";
+import {selecionarPedidos} from "../actions/pedidoActions";
+import connect from "react-redux/es/connect/connect";
 
 class Operacao extends Component {
     render() {
@@ -11,62 +15,7 @@ class Operacao extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <table className="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Cliente</th>
-                            <th className="text-center">Status</th>
-                            <th className="text-center">Ações</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-pagamento"></i></td>
-                            <td className="text-center">
-                                <button><i className="fas fa-external-link-square-alt fa-2x"></i></button>
-                                <button><i className="fas fa-forward fa-2x"></i></button>
-                                <button><i className="fas fa-times-circle fa-2x"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-conferencia"></i></td>
-                            <td className="text-center">
-                                <button><i className="fas fa-external-link-square-alt fa-2x"></i></button>
-                                <button><i className="fas fa-forward fa-2x"></i></button>
-                                <button><i className="fas fa-times-circle fa-2x"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-preparado"></i></td>
-                            <td className="text-center">
-                                <button><i className="fas fa-external-link-square-alt fa-2x"></i></button>
-                                <button><i className="fas fa-forward fa-2x"></i></button>
-                                <button><i className="fas fa-times-circle fa-2x"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-novo"></i></td>
-                            <td className="text-center">
-                                <button><i className="fas fa-external-link-square-alt fa-2x"></i></button>
-                                <button><i className="fas fa-forward fa-2x"></i></button>
-                                <button><i className="fas fa-times-circle fa-2x"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Cliente</td>
-                            <td className="text-center"><i className="fas fa-circle fa-2x status-novo"></i></td>
-                            <td className="text-center">
-                                <button><i className="fas fa-external-link-square-alt fa-2x"></i></button>
-                                <button><i className="fas fa-forward fa-2x"></i></button>
-                                <button><i className="fas fa-times-circle fa-2x"></i></button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <OperacaoList pedidos={this.props.pedidos}/>
                 </div>
                 <Footer/>
             </div>
@@ -74,4 +23,15 @@ class Operacao extends Component {
     }
 }
 
-export default Operacao
+function mapStateProps(state) {
+    return {
+        pedidos: state.pedidos.list
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    bindActionCreators({selecionarPedidos}, dispatch);
+}
+
+
+export default connect(mapStateProps, mapDispatchToProps)(Operacao)

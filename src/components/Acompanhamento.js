@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {selecionarPedidos} from '../actions/pedidoActions'
-import { bindActionCreators } from 'redux';
-import AcompanhamentoList from './pedido/AcompanhamentoList';
-import Footer from "./Footer";
+import {bindActionCreators} from 'redux'
+import AcompanhamentoList from './pedido/AcompanhamentoList'
+import Footer from "./Footer"
 
 class Acompanhamento extends Component {
     render() {
@@ -15,7 +15,7 @@ class Acompanhamento extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <AcompanhamentoList pedidos={this.props.pedidos} />
+                    <AcompanhamentoList pedidos={this.props.pedidos}/>
                 </div>
                 <Footer/>
             </div>
@@ -23,13 +23,13 @@ class Acompanhamento extends Component {
     }
 }
 
-function mapStateProps(state){
+function mapStateProps(state) {
     return {
         pedidos: state.pedidos.list
     }
 }
 
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
     bindActionCreators({selecionarPedidos}, dispatch);
 }
 

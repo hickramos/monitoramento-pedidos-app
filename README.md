@@ -9,9 +9,17 @@ O objetivo da aplicação é aplicar os conceitos de React e Redux aprendidos
 em sala de aula e com o mesmo obter nota para a conclusão da cadeira de 
 Internet Rica.
 
-### Instalação
+### Instalação e Execução
 ```
 $ npm i && npm run start
+```
+
+### Subir Base de Dados
+```
+$ cd temp/
+```
+```
+$ json-server --watch db.json --port 3004
 ```
 
 ## Telas do sistema

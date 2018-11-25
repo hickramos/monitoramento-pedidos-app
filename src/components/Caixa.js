@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {selecionarPedidos} from '../actions/pedidoActions'
-import { bindActionCreators } from 'redux';
-import  CaixaList  from './pedido/CaixaList';
+import {bindActionCreators} from 'redux';
+import CaixaList from './pedido/CaixaList';
 
 class Caixa extends Component {
     render() {
@@ -14,20 +14,20 @@ class Caixa extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <CaixaList pedidos={this.props.pedidos} />
+                    <CaixaList pedidos={this.props.pedidos}/>
                 </div>
             </div>
         )
     }
 }
 
-function mapStateProps(state){
+function mapStateProps(state) {
     return {
         pedidos: state.pedidos.list
     }
 }
 
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
     bindActionCreators({selecionarPedidos}, dispatch);
 }
 

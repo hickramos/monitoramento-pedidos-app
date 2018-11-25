@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AcompanhamentoList = ({ pedidos }) => {
+const AcompanhamentoList = ({pedidos}) => {
     return (
         <table className="table table-striped">
             <thead>
@@ -11,24 +11,22 @@ const AcompanhamentoList = ({ pedidos }) => {
             </tr>
             </thead>
             <tbody>
-                {pedidos.filter(pedido => pedido.status.id !== 'excluido' && pedido.status.id !== 'pronto').length > 0 ?
-                    pedidos
-                        .filter(pedido => pedido.status.id !== 'excluido' && pedido.status.id !== 'pronto')
-                        .map(pedido => {
-                            return(
-                                <tr key={pedido.id}>
-                                    <td>{pedido.nome}</td>
-                                    <td className="text-center"> 10 min</td>
-                                    <td className="text-center">
-                                        <i className={"fas fa-circle fa-2x status-"+pedido.status.id}></i>
-                                    </td>
-                                </tr>
-                            )
-                        }):
-                    <tr>
-                        <td colSpan="3">Nenhum pedido encontrado</td>
-                    </tr>    
-                }
+            {pedidos.filter(pedido => pedido.status.id !== 'excluido' && pedido.status.id !== 'pronto').length > 0 ?
+                pedidos.map(pedido => {
+                    return (
+                        <tr key={pedido.id}>
+                            <td>{pedido.nome}</td>
+                            <td className="text-center"> 10 min</td>
+                            <td className="text-center">
+                                <i className={"fas fa-circle fa-2x status-" + pedido.status.id}></i>
+                            </td>
+                        </tr>
+                    )
+                }) :
+                <tr>
+                    <td colSpan="3">Nenhum pedido encontrado</td>
+                </tr>
+            }
             </tbody>
         </table>
     )

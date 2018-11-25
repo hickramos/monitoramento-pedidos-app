@@ -6,7 +6,7 @@
       "cpf": "123.456.789.01",
       "descricao": "Um pedido com vários itens",
       "status": {
-        "id": "novo"
+        "id": "excluido"
       }
     },
     {
@@ -15,7 +15,7 @@
       "cpf": "345.678.901.24",
       "descricao": "Uma pequena descrição de pedido",
       "status": {
-        "id": "preparado"
+        "id": "excluido"
       }
     },
     {
@@ -24,7 +24,7 @@
       "cpf": "345.678.901.24",
       "descricao": "Uma pequena descrição de pedido",
       "status": {
-        "id": "conferencia"
+        "id": "excluido"
       }
     },
     {
@@ -33,7 +33,7 @@
       "cpf": "345.678.901.24",
       "descricao": "Uma pequena descrição de pedido",
       "status": {
-        "id": "pronto"
+        "id": "excluido"
       }
     },
     {
@@ -51,7 +51,7 @@
       "cpf": "345.678.901.24",
       "descricao": "Uma pequena descrição de pedido",
       "status": {
-        "id": "pagamento"
+        "id": "excluido"
       }
     }
   ],
