@@ -26,8 +26,9 @@ const CaixaList = (props) => {
                                     <i className={"fas fa-circle fa-2x status-" + pedido.status.id}></i>
                                 </td>
                                 <td className="text-center">
-                                    <i className="fas fa-forward fa-2x"
-                                       onClick={() => props.finalizarPedido(pedido)}></i>
+                                    <button onClick={() => props.finalizarPedido(pedido)}>
+                                        <i className="fas fa-forward fa-2x"></i>
+                                    </button>
                                 </td>
                             </tr>
                         )

@@ -6,7 +6,7 @@
       "cpf": "123.456.789.01",
       "descricao": "Um pedido com vários itens",
       "status": {
-        "id": "excluido"
+        "id": "pagamento"
       }
     },
     {
@@ -15,7 +15,7 @@
       "cpf": "345.678.901.24",
       "descricao": "Uma pequena descrição de pedido",
       "status": {
-        "id": "excluido"
+        "id": "preparado"
       }
     },
     {
@@ -33,7 +33,7 @@
       "cpf": "345.678.901.24",
       "descricao": "Uma pequena descrição de pedido",
       "status": {
-        "id": "excluido"
+        "id": "pronto"
       }
     },
     {
@@ -53,6 +53,24 @@
       "status": {
         "id": "excluido"
       }
+    },
+    {
+      "nome": "teste",
+      "cpf": "11111111111111111",
+      "descricao": "teste henrique",
+      "status": {
+        "id": "conferencia"
+      },
+      "id": 7
+    },
+    {
+      "nome": "Henrique",
+      "cpf": "123455",
+      "descricao": "asda",
+      "status": {
+        "id": "novo"
+      },
+      "id": 8
     }
   ],
   "status": [

@@ -7,6 +7,7 @@ export function criarPedido(pedido) {
     pedido.status = {
         id: "novo"
     };
+    
     return dispatch => {
         axios.post(urlPedidos, pedido)
             .then(request => {
@@ -14,33 +15,11 @@ export function criarPedido(pedido) {
                 dispatch({type: 'CADASTRO_PEDIDO_SUCESSO'})
             })
     }
-
 }
 
 export function selecionarPedidos() {
     return dispatch => {
-        axios.get(urlPedidos)
-            .then(pedidos => {
-                dispatch(selecionarPedidosSuccess(pedidos.data))
-            })
-    }
-}
-
-export function selecionarPedidosSuccess(pedidos) {
-    return {type: 'CARREGAR_PEDIDOS_SUCESSO', pedidos}
-}
-
-export function finalizarPedido(pedido) {
-    pedido.status.id = 'pronto';
-
-    return dispatch => {
-        axios.put(urlPedidos + "/" + pedido.id, pedido)
-            .then(pedido => {
-                axios.get(urlPedidos)
-                    .then(pedidos => {
-                        dispatch(finalizarPedidosSuccess(pedidos.data))
-                    })
-            });
+        listarPedidos(dispatch, 'CARREGAR_PEDIDOS_SUCESSO');
     }
 }
 
@@ -59,37 +38,51 @@ export function vizualizarPedido(pedido) {
 }
 
 export function avancarPedido(pedido) {
-    // pedido.status.id = 'pronto';
-    //
-    // return dispatch => {
-    //     axios.put(urlPedidos+"/"+pedido.id, pedido)
-    //         .then(pedido => {
-    //             axios.get(urlPedidos)
-    //                 .then(pedidos => {
-    //                     dispatch(finalizarPedidosSuccess(pedidos.data))
-    //                 })
-    //         });
-    // }
+    // Altera o status
+    if(pedido.status.id === "novo") {
+        pedido.status.id = "preparado";
+    } else if(pedido.status.id === "preparado"){
+        pedido.status.id = "conferencia";
+    } else if(pedido.status.id === "conferencia"){
+        pedido.status.id = "pagamento";
+    }
+
+    return dispatch =>{
+        atualizarPedido(dispatch, 'AVANCAR_PEDIDO_SUCESSO', pedido);
+    }
+}
+
+export function finalizarPedido(pedido) {
+    pedido.status.id = 'pronto';
+
+    return dispatch => {
+        atualizarPedido(dispatch, 'FINALIZAR_PEDIDO_SUCESSO', pedido);
+    }
 }
 
 export function cancelarPedido(pedido) {
     pedido.status.id = 'excluido';
 
     return dispatch => {
-        axios.put(urlPedidos + "/" + pedido.id, pedido)
-            .then(pedido => {
-                axios.get(urlPedidos)
-                    .then(pedidos => {
-                        dispatch(cancelarPedidosSuccess(pedidos.data))
-                    })
-            });
+        atualizarPedido(dispatch, 'CANCELAR_PEDIDO_SUCESSO', pedido);
     }
 }
 
-export function finalizarPedidosSuccess(pedidos) {
-    return {type: 'FINALIZAR_PEDIDO_SUCESSO', pedidos}
+function atualizarPedido(dispatch, action, pedido){
+    const urlPedido = urlPedidos + "/" + pedido.id;
+    
+    // atualiza o pedido
+    axios.put(urlPedido, pedido).then(pedido => {
+        listarPedidos(dispatch, action);
+    });
 }
 
-export function cancelarPedidosSuccess(pedidos) {
-    return {type: 'CANCELAR_PEDIDO_SUCESSO', pedidos}
+function listarPedidos(dispatch, action) {
+    axios.get(urlPedidos).then(pedidos => {
+        dispatch(pedidosSuccess(action, pedidos.data))
+    })
+}
+
+function pedidosSuccess(action, pedidos){
+    return {type: action, pedidos}
 }

@@ -10,6 +10,8 @@ export default function pedidoReducer(state = INITIAL_STATE, action) {
             return {...state, pedido: action}
         case actionTypes.CARREGAR_PEDIDOS_SUCESSO:
         case actionTypes.FINALIZAR_PEDIDO_SUCESSO:
+        case actionTypes.AVANCAR_PEDIDO_SUCESSO:
+        case actionTypes.CANCELAR_PEDIDO_SUCESSO:
             return {...state, list: action.pedidos} 
         default:
             return state

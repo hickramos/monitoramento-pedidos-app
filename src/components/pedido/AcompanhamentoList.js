@@ -12,7 +12,9 @@ const AcompanhamentoList = ({pedidos}) => {
             </thead>
             <tbody>
             {pedidos.filter(pedido => pedido.status.id !== 'excluido' && pedido.status.id !== 'pronto').length > 0 ?
-                pedidos.map(pedido => {
+                pedidos
+                .filter(pedido => pedido.status.id !== 'excluido' && pedido.status.id !== 'pronto')
+                .map(pedido => {
                     return (
                         <tr key={pedido.id}>
                             <td>{pedido.nome}</td>
