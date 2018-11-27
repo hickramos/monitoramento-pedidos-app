@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {selecionarPedidos} from '../actions/pedidoActions'
 import {bindActionCreators} from 'redux';
 import CaixaList from './pedido/CaixaList';
+import Footer from './Footer';
 
 class Caixa extends Component {
     render() {
@@ -16,6 +17,7 @@ class Caixa extends Component {
                 <div className="row">
                     <CaixaList pedidos={this.props.pedidos}/>
                 </div>
+                <Footer/>
             </div>
         )
     }

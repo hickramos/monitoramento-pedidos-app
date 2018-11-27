@@ -23,20 +23,6 @@ export function selecionarPedidos() {
     }
 }
 
-export function vizualizarPedido(pedido) {
-    // pedido.status.id = 'pronto';
-    //
-    // return dispatch => {
-    //     axios.put(urlPedidos+"/"+pedido.id, pedido)
-    //         .then(pedido => {
-    //             axios.get(urlPedidos)
-    //                 .then(pedidos => {
-    //                     dispatch(finalizarPedidosSuccess(pedidos.data))
-    //                 })
-    //         });
-    // }
-}
-
 export function avancarPedido(pedido) {
     // Altera o status
     if(pedido.status.id === "novo") {

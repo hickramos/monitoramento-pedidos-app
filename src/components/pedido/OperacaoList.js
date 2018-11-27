@@ -25,19 +25,16 @@ const OperacaoList = (props) => {
                             <td className="text-center"><i
                                 className={"fas fa-circle fa-2x status-" + pedido.status.id}></i></td>
                             <td className="text-center">
-                                <button onClick={() => props.visualizarPedido(pedido)}>
-                                    <i className="fas fa-external-link-square-alt fa-2x"></i>
-                                </button>
                                 {
                                     pedido.status.id !== "pagamento" 
-                                        ?<button onClick={() => props.avancarPedido(pedido)}>
-                                            <i className="fas fa-forward fa-2x"></i>
+                                        ?<button type="button" className="btn btn-success" onClick={() => props.avancarPedido(pedido)}>
+                                            <i className="fas fa-forward fa-1x"></i>
                                         </button>
                                         :""
 
                                 }
-                                <button onClick={() => props.cancelarPedido(pedido)}>
-                                    <i className="fas fa-times-circle fa-2x"></i>
+                                <button type="button" className="btn btn-danger" onClick={() => props.cancelarPedido(pedido)}>
+                                    <i className="fas fa-times-circle fa-1x"></i>
                                 </button>
                             </td>
                         </tr>
