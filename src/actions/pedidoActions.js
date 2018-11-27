@@ -23,6 +23,11 @@ export function selecionarPedidos() {
     }
 }
 
+export function visualizarPedido(pedido) {
+    alert("código: "+ pedido.id+"\nnome: " + pedido.nome+"\ndescrição: "+ pedido.descricao);
+    return {type: 'VISUALIZAR_PEDIDO_SUCCESO'}
+}
+
 export function avancarPedido(pedido) {
     // Altera o status
     if(pedido.status.id === "novo") {

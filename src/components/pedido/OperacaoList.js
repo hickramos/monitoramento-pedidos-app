@@ -1,7 +1,7 @@
 import React from 'react';
 import {bindActionCreators} from "redux";
 import connect from "react-redux/es/connect/connect";
-import {cancelarPedido, avancarPedido} from '../../actions/pedidoActions'
+import {cancelarPedido, avancarPedido, visualizarPedido} from '../../actions/pedidoActions'
 
 const OperacaoList = (props) => {
     const {pedidos} = props
@@ -25,6 +25,9 @@ const OperacaoList = (props) => {
                             <td className="text-center"><i
                                 className={"fas fa-circle fa-2x status-" + pedido.status.id}></i></td>
                             <td className="text-center">
+                                <button type="button" className="btn btn-info" onClick={() => props.visualizarPedido(pedido)}>
+                                    <i className="fas fa-external-link-square-alt fa-1x"></i>
+                                </button>
                                 {
                                     pedido.status.id !== "pagamento" 
                                         ?<button type="button" className="btn btn-success" onClick={() => props.avancarPedido(pedido)}>
@@ -50,7 +53,7 @@ const OperacaoList = (props) => {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({cancelarPedido, avancarPedido}, dispatch)
+    return bindActionCreators({cancelarPedido, avancarPedido, visualizarPedido}, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(OperacaoList);
